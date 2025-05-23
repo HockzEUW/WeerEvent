@@ -4,13 +4,18 @@ using WeerEventsApi.Steden.Models;
 
 namespace WeerEventsApi.Stations.Models;
 
-public abstract class Weerstation(Stad locatie, IMetingLogger logger, int min, int max, string eenheid) {
+public abstract class Weerstation(Stad locatie, IMetingLogger logger, int min, int max, string eenheid) : AbstractObservable {
     public Stad Locatie { get; } = locatie;
     internal IMetingLogger Logger { get; } = logger;
     internal List<Meting> Metingen { get; } = new();
     internal int Min { get; } = min;
     internal int Max { get; } = max;
     internal string Eenheid { get; } = eenheid;
+
+    public void VoegMetingToe(Meting meting) {
+        Metingen.Add(meting);
+        NotifyObservers(meting);
+    }
 }
 
 public class LuchtdrukStation(Stad locatie, IMetingLogger logger) 

@@ -4,6 +4,5 @@ namespace WeerEventsApi.Logging;
 
 public interface IMetingLogger
 {
-    void LogInXml(Meting meting);
-    void LogInJson(Meting meting);
+    void Log(Meting meting);
 }

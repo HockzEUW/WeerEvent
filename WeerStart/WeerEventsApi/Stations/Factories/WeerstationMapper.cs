@@ -11,7 +11,7 @@ public static class WeerstationMapper {
                 Beschrijving = weerstation.Locatie.Beschrijving,
                 GekendVoor = weerstation.Locatie.GekendVoor
             },
-            Metingen = weerstation.Metingen.Select(m => MetingMapper.ConvertMetingToMetingDto(m)) // Use the 'Metingen' property directly
+            Metingen = weerstation.Metingen.Select(m => MetingMapper.ConvertMetingToMetingDto(m))
         };
     }
 }

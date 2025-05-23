@@ -9,7 +9,6 @@ public class WeerstationManager : IWeerstationManager {
 
     public WeerstationManager(List<Weerstation> weerstations, IMetingLogger logger) {
         _weerstations = weerstations;
-        _logger = logger;
     }
 
     public List<Meting> GeefMetingen() =>
@@ -18,9 +17,7 @@ public class WeerstationManager : IWeerstationManager {
     public void VoerMetingUit() {
         foreach (var ws in _weerstations) {
             var meting = GenereerMeting(ws);
-            ws.Metingen.Add(meting);
-            _logger.LogInXml(meting);
-            _logger.LogInJson(meting);
+            ws.VoegMetingToe(meting);
         }
     }
 

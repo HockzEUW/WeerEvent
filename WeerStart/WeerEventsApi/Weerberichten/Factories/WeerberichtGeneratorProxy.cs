@@ -6,11 +6,11 @@ public class WeerberichtGeneratorProxy(IWeerberichtGenerator inner) : IWeerberic
     private WeerberichtDto? _cached;
     private DateTime _laatsteWeerberichtGemaakt = DateTime.MinValue;
 
-    public WeerberichtDto GenereerWeerbericht(IEnumerable<MetingDto> metingen)
+    public WeerberichtDto GenereerWeerbericht()
     {
         if (_cached == null || DateTime.Now - _laatsteWeerberichtGemaakt > TimeSpan.FromMinutes(1))
         {
-            _cached = inner.GenereerWeerbericht(metingen);
+            _cached = inner.GenereerWeerbericht();
             _laatsteWeerberichtGemaakt = DateTime.Now;
         }
         return _cached;

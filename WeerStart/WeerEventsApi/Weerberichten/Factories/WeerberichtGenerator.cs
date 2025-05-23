@@ -1,20 +1,34 @@
 using WeerEventsApi.Facade.Dto;
+using WeerEventsApi.Metingen;
+using System.Collections.Concurrent;
+using WeerEventsApi.Metingen.Factories;
+using WeerEventsApi.Logging.Observer;
 
 namespace WeerEventsApi.Weerberichten.Factories;
 
-public class WeerberichtGenerator : IWeerberichtGenerator
+public class WeerberichtGenerator : IWeerberichtGenerator, IObserver
 {
-    public WeerberichtDto GenereerWeerbericht(IEnumerable<MetingDto> metingen)
-    {
-        Thread.Sleep(5000);// Simuleer zware operatie
+    private readonly List<MetingDto> _metingen = new();
 
-        int aantalMetingen = metingen.Count();
+    public void Update(Meting meting)
+    {
+        _metingen.Add(MetingMapper.ConvertMetingToMetingDto(meting));
+    }
+
+    public WeerberichtDto GenereerWeerbericht()
+    {
+        Thread.Sleep(5000); // Simuleer zware operatie
+
+        var metingen = _metingen.ToList();
+        int aantalMetingen = metingen.Count;
         string weerType = "goed";
 
         var metingenPerEenheid = metingen.GroupBy(m => m.Eenheid);
-        foreach (var meting in metingenPerEenheid) {
+        foreach (var meting in metingenPerEenheid)
+        {
             double gemiddelde = meting.Average(m => m.Waarde);
-            switch (meting.Key) {
+            switch (meting.Key)
+            {
                 case "°C":
                     if (gemiddelde < 15) weerType = "slecht";
                     break;
@@ -28,13 +42,14 @@ public class WeerberichtGenerator : IWeerberichtGenerator
                     if (gemiddelde < 980 || gemiddelde > 1040) weerType = "slecht";
                     break;
             }
-            if (weerType == "slecht") 
+            if (weerType == "slecht")
                 break;
         }
 
         string bericht = $"Op basis van {aantalMetingen} metingen en mijn diepzinnig computermodel kan ik zeggen dat er kans is op {weerType} weer.";
 
-        return new WeerberichtDto {
+        return new WeerberichtDto
+        {
             Moment = DateTime.Now,
             Bericht = bericht
         };

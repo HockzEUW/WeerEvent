@@ -1,34 +1,27 @@
 using Microsoft.Extensions.WebEncoders.Testing;
 using System.Text.Json;
 using System.Xml.Linq;
+using WeerEventsApi.Logging.Observer;
 using WeerEventsApi.Metingen;
 
 namespace WeerEventsApi.Logging;
 
-public class MetingLogger : IMetingLogger
+public class MetingLogger : IMetingLogger, IObserver
 {
-    public virtual void LogInXml(Meting meting)
+    public virtual void Log(Meting meting)
     {
-        // Default: niets loggen
+        Console.WriteLine($"In {meting.Locatie.Naam} op {meting.Moment}: {meting.Waarde}{meting.Eenheid}");
     }
 
-    public virtual void LogInJson(Meting meting)
+    public void Update(Meting meting)
     {
-        // Default: niets loggen
+        Log(meting);
     }
 }
 
-// Decorator XML logging
-public class XMLLogger : IMetingLogger
+public class XMLLogger(IMetingLogger inner) : IMetingLogger, IObserver
 {
-    private readonly IMetingLogger _inner;
-
-    public XMLLogger(IMetingLogger inner)
-    {
-        _inner = inner;
-    }
-
-    public void LogInXml(Meting meting)
+    public void Log(Meting meting)
     {
         var xml = new XElement("Meting",
             new XElement("Moment", meting.Moment.ToString("G")),
@@ -37,33 +30,20 @@ public class XMLLogger : IMetingLogger
         );
         File.AppendAllText("log.xml", xml + Environment.NewLine);
 
-        _inner.LogInXml(meting);
+        inner.Log(meting);
     }
 
-    public void LogInJson(Meting meting)
+    public void Update(Meting meting)
     {
-        _inner.LogInJson(meting);
+        Log(meting);
     }
 }
 
-// Decorator JSON logging
-public class JSONLogger : IMetingLogger
+public class JSONLogger(IMetingLogger inner) : IMetingLogger, IObserver
 {
-    private readonly IMetingLogger _inner;
-
-    public JSONLogger(IMetingLogger inner)
+    public void Log(Meting meting)
     {
-        _inner = inner;
-    }
-
-    public void LogInXml(Meting meting)
-    {
-        _inner.LogInXml(meting);
-    }
-
-    public void LogInJson(Meting meting)
-    {
-        var options = new JsonSerializerOptions { WriteIndented = true, Encoder = JavaScriptTestEncoder.UnsafeRelaxedJsonEscaping }; //eerste property => mooie layout json | tweede property => graden celcius symbool printen (anders krijg je een unicode)
+        var options = new JsonSerializerOptions { WriteIndented = true, Encoder = JavaScriptTestEncoder.UnsafeRelaxedJsonEscaping };
         var json = JsonSerializer.Serialize(new
         {
             Moment = meting.Moment,
@@ -77,6 +57,11 @@ public class JSONLogger : IMetingLogger
             }
         }, options);
         File.AppendAllText("log.json", json + Environment.NewLine);
-        _inner.LogInJson(meting);
+        inner.Log(meting);
+    }
+
+    public void Update(Meting meting)
+    {
+        Log(meting);
     }
 }

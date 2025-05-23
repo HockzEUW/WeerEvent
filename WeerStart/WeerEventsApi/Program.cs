@@ -10,18 +10,25 @@ using WeerEventsApi.Weerberichten.Factories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<IMetingLogger>(MetingLoggerFactory.Create(true, true));
+var logger = builder.Services.AddSingleton<IMetingLogger>(MetingLoggerFactory.Create(true, true));
 builder.Services.AddSingleton<IStadRepository, StadRepository>();
 builder.Services.AddSingleton<IStadManager, StadManager>();
 builder.Services.AddSingleton<WeerberichtGenerator>();
-builder.Services.AddSingleton<WeerberichtGeneratorProxy>(provider =>
-    new WeerberichtGeneratorProxy(provider.GetRequiredService<WeerberichtGenerator>()));
 builder.Services.AddSingleton<IDomeinController, DomeinController>();
+builder.Services.AddSingleton<IWeerberichtGenerator>(provider =>
+    new WeerberichtGeneratorProxy(provider.GetRequiredService<WeerberichtGenerator>())
+);
 builder.Services.AddSingleton<IWeerstationManager>(provider => {
     var logger = provider.GetRequiredService<IMetingLogger>();
-    var stations = WeerstationFactory.CreateWeerstations(provider.GetRequiredService<IStadRepository>().GetSteden(), logger);
+    var generator = provider.GetRequiredService<WeerberichtGenerator>();
+    var stations = WeerstationFactory.CreateWeerstations(
+        provider.GetRequiredService<IStadRepository>().GetSteden(),
+        logger,
+        generator // <-- pass as extraObserver
+    );
     return new WeerstationManager(stations, logger);
 });
+
 
 var app = builder.Build();
 
