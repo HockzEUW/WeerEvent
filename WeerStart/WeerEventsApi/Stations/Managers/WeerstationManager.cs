@@ -5,9 +5,8 @@ using WeerEventsApi.Stations.Models;
 namespace WeerEventsApi.Stations.Managers; 
 public class WeerstationManager : IWeerstationManager {
     private readonly List<Weerstation> _weerstations;
-    private readonly IMetingLogger _logger;
 
-    public WeerstationManager(List<Weerstation> weerstations, IMetingLogger logger) {
+    public WeerstationManager(List<Weerstation> weerstations) {
         _weerstations = weerstations;
     }
 

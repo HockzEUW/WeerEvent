@@ -1,6 +1,5 @@
 using WeerEventsApi.Facade.Dto;
 using WeerEventsApi.Metingen;
-using System.Collections.Concurrent;
 using WeerEventsApi.Metingen.Factories;
 using WeerEventsApi.Logging.Observer;
 

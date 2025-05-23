@@ -128,3 +128,243 @@
     "GekendVoor": "Carnaval"
   }
 }
+{
+  "Moment": "2025-05-23T14:27:40.407077+02:00",
+  "Eenheid": "hPa",
+  "Waarde": 1032,
+  "Locatie": {
+    "Naam": "Aalst",
+    "Beschrijving": "Tweede grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Carnaval"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.4573652+02:00",
+  "Eenheid": "mm/h",
+  "Waarde": 30,
+  "Locatie": {
+    "Naam": "Sint-Niklaas",
+    "Beschrijving": "Derde grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Marktplein"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.4597397+02:00",
+  "Eenheid": "hPa",
+  "Waarde": 952,
+  "Locatie": {
+    "Naam": "Sint-Niklaas",
+    "Beschrijving": "Derde grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Marktplein"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.462123+02:00",
+  "Eenheid": "°C",
+  "Waarde": 21,
+  "Locatie": {
+    "Naam": "Gent",
+    "Beschrijving": "Grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Studenten"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.463434+02:00",
+  "Eenheid": "°C",
+  "Waarde": -3,
+  "Locatie": {
+    "Naam": "Sint-Niklaas",
+    "Beschrijving": "Derde grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Marktplein"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.4657659+02:00",
+  "Eenheid": "°C",
+  "Waarde": -2,
+  "Locatie": {
+    "Naam": "Aalst",
+    "Beschrijving": "Tweede grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Carnaval"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.4669476+02:00",
+  "Eenheid": "km/h",
+  "Waarde": 64,
+  "Locatie": {
+    "Naam": "Gent",
+    "Beschrijving": "Grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Studenten"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.4680494+02:00",
+  "Eenheid": "km/h",
+  "Waarde": 19,
+  "Locatie": {
+    "Naam": "Gent",
+    "Beschrijving": "Grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Studenten"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.469479+02:00",
+  "Eenheid": "mm/h",
+  "Waarde": 42,
+  "Locatie": {
+    "Naam": "Sint-Niklaas",
+    "Beschrijving": "Derde grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Marktplein"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.4704231+02:00",
+  "Eenheid": "°C",
+  "Waarde": 31,
+  "Locatie": {
+    "Naam": "Sint-Niklaas",
+    "Beschrijving": "Derde grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Marktplein"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.4713018+02:00",
+  "Eenheid": "km/h",
+  "Waarde": 61,
+  "Locatie": {
+    "Naam": "Gent",
+    "Beschrijving": "Grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Studenten"
+  }
+}
+{
+  "Moment": "2025-05-23T14:27:40.4721361+02:00",
+  "Eenheid": "°C",
+  "Waarde": 18,
+  "Locatie": {
+    "Naam": "Gent",
+    "Beschrijving": "Grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Studenten"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.5834832+02:00",
+  "Eenheid": "mm/h",
+  "Waarde": 38,
+  "Locatie": {
+    "Naam": "Aalst",
+    "Beschrijving": "Tweede grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Carnaval"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.6293005+02:00",
+  "Eenheid": "km/h",
+  "Waarde": 17,
+  "Locatie": {
+    "Naam": "Sint-Niklaas",
+    "Beschrijving": "Derde grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Marktplein"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.630547+02:00",
+  "Eenheid": "°C",
+  "Waarde": 24,
+  "Locatie": {
+    "Naam": "Gent",
+    "Beschrijving": "Grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Studenten"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.6317442+02:00",
+  "Eenheid": "hPa",
+  "Waarde": 1047,
+  "Locatie": {
+    "Naam": "Sint-Niklaas",
+    "Beschrijving": "Derde grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Marktplein"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.6326639+02:00",
+  "Eenheid": "mm/h",
+  "Waarde": 22,
+  "Locatie": {
+    "Naam": "Gent",
+    "Beschrijving": "Grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Studenten"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.634148+02:00",
+  "Eenheid": "°C",
+  "Waarde": 24,
+  "Locatie": {
+    "Naam": "Gent",
+    "Beschrijving": "Grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Studenten"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.6355128+02:00",
+  "Eenheid": "hPa",
+  "Waarde": 978,
+  "Locatie": {
+    "Naam": "Sint-Niklaas",
+    "Beschrijving": "Derde grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Marktplein"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.6365716+02:00",
+  "Eenheid": "°C",
+  "Waarde": 31,
+  "Locatie": {
+    "Naam": "Sint-Niklaas",
+    "Beschrijving": "Derde grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Marktplein"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.637663+02:00",
+  "Eenheid": "°C",
+  "Waarde": 24,
+  "Locatie": {
+    "Naam": "Sint-Niklaas",
+    "Beschrijving": "Derde grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Marktplein"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.6384391+02:00",
+  "Eenheid": "km/h",
+  "Waarde": 3,
+  "Locatie": {
+    "Naam": "Aalst",
+    "Beschrijving": "Tweede grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Carnaval"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.6392575+02:00",
+  "Eenheid": "mm/h",
+  "Waarde": 20,
+  "Locatie": {
+    "Naam": "Gent",
+    "Beschrijving": "Grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Studenten"
+  }
+}
+{
+  "Moment": "2025-05-23T14:31:56.6401471+02:00",
+  "Eenheid": "hPa",
+  "Waarde": 1042,
+  "Locatie": {
+    "Naam": "Gent",
+    "Beschrijving": "Grootste stad van Oost-Vlaanderen",
+    "GekendVoor": "Studenten"
+  }
+}

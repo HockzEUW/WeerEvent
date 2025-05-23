@@ -24,9 +24,9 @@ builder.Services.AddSingleton<IWeerstationManager>(provider => {
     var stations = WeerstationFactory.CreateWeerstations(
         provider.GetRequiredService<IStadRepository>().GetSteden(),
         logger,
-        generator // <-- pass as extraObserver
+        generator
     );
-    return new WeerstationManager(stations, logger);
+    return new WeerstationManager(stations);
 });
 
 
