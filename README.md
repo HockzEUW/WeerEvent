@@ -30,7 +30,7 @@ By default zal de applicatie naar console loggen wanneer de POST call is aangero
 
 # :warning: Known Issues 
 <ins>Lege metingen</ins><br>
-Wanneer de POST call om metingen uit te voeren nog niet werd aangeroepen, worden er lege metingen gelogd zonder bijhorende instructie om eerst metingen uit te voeren.
+Wanneer de POST call om metingen uit te voeren nog niet werd aangeroepen en de metingen opgevraagd worden, krijgt de gebruiker een lege collectie te zien zonder instructies om eerst metingen uit te voeren.
 
 
 <ins>Corrupte logfiles</ins><br>
