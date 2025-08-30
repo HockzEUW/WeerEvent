@@ -1,6 +1,29 @@
 # :sun_behind_small_cloud: WeerEvent :sun_behind_small_cloud:
 ![DotNet Badge](https://img.shields.io/badge/.NET_9.0-8A2BE2)
 
+Dit project is opgemaakt in het kader van een examenopdracht waar de focus lag op het ontwerp, met toepassing van volgende elementen: 
+    
+    Klassen & Objecten
+
+        Overerving
+
+        GRASP
+
+    Design Patterns
+
+        Facade
+
+        Factory
+
+        Decorator
+
+        Observer
+
+        Caching Proxy
+
+    Mini Http Api
+
+
 
 WeerEvent is een .NET applicatie die een weersvoorspelling maakt op basis van willekeurig gegenereerde metingen, welke geraadpleegd kunnen worden via zijn API.
 
